@@ -1,0 +1,11 @@
+<div>
+
+    {% for myinfo in myinfos %}
+    <div class="mi">
+        <a href="{% url 'myinfo_detail' myinfo.id %}">
+
+        <h3>{{ myinfo.name|capfirst }}</h3>
+        </a>
+    </div>
+    {% endfor %}
+</div>
