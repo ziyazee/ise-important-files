@@ -1,11 +1,25 @@
-<div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="container">
+    <br>
+        <div class="jumbotron">
+          <h1>Information Science and engineering</h1>      
+          <p>Get your important notes,files here...</p>
+        </div>
+          
+      </div>
+<div class="container">
 
-    {% for myinfo in myinfos %}
-    <div class="mi">
-        <a href="{% url 'myinfo_detail' myinfo.id %}">
+    {% for subject in yea %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+    <a href="{% url 'subjects' year=subject.year %}">
+            
+    <h3>{{ subject.year }}</h3>
+    </a>
+    </div></div>
 
-        <h3>{{ myinfo.name|capfirst }}</h3>
-        </a>
-    </div>
-    {% endfor %}
+    {% endfor %} 
+
 </div>
