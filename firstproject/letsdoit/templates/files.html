@@ -5,15 +5,15 @@
 
 <div class="container">
     <br>
-<div class="jumbotron">
-    <h1>Subjects</h1>
-</div>
-      {% for sub in subject %}  
-      <div class="panel panel-default">
-            <div class="panel-body">
-        <a href="{% url 'details' name=sub.name %}"><h3>{{sub.name }}</h3></a>
-        <p>{{sub.description}}</p>
+
+    {% for sub in file %}  
+    <div class="panel panel-default">
+          <div class="panel-body">
+      <h3>{{sub.fname }}</h3>
+      <h5>{{sub.fdescription }}</h5>
+     
           </div></div>
-        {% endfor %}
+      {% endfor %}
+    
     
 </div>

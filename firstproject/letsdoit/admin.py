@@ -1,15 +1,12 @@
 from django.contrib import admin
 
-from .models import title
-from .models import Myinfo
-from .models import child
-from .models import livings
 from .models import clasyear
+from .models import filest
 
 
-@admin.register(clasyear)
+@admin.register(filest)
 class  Ziya(admin.ModelAdmin):
-    list_display=['year','name','description']
+    list_display=['fname','fdescription','categorie']
 
    
 #admin.site.register(admin,Myinfo)

@@ -11,12 +11,12 @@
       </div>
 <div class="container">
 
-    {% for subject in yea %}
+    {% for y in yea %}
     <div class="panel panel-default">
         <div class="panel-body">
-    <a href="{% url 'subjects' year=subject.year %}">
+    <a href="{% url 'subjects' year=y.year %}">
             
-    <h3>{{ subject.year }}</h3>
+    <h3>{{ y.year }}</h3>
     </a>
     </div></div>
 
