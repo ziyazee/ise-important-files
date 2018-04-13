@@ -16,4 +16,15 @@
       {% endfor %}
     
     
-</div>
+
+    <br>
+    
+    <h1>New post</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <table border="1">
+    {{ form }}
+  </table>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    </div>
