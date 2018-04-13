@@ -8,14 +8,14 @@ class PostForm(forms.ModelForm):
     #     return "/files/%s"
     # categorie=get_absolute_url()
     # def details(request,name):
-    #     category=filest.objects.get(categorie=name)    
+    #     category=filest.objects.get(categorie=name)   
     class Meta:
-        # category=clasyear.objects.get(categorie=name)
+        # category=clasyear.objectsTextField().get(categorie=name)
 
         #here i need to assign categorie value from url parameter
         #categorie=**something**
         
         model = filest
-        fields = ('fname','fdescription','categorie',)
-        # widgets = {'categorie': forms.HiddenInput()}
+        fields = ('fname','fdescription', 'categorie')
+        widgets = {'categorie': forms.HiddenInput()}
         

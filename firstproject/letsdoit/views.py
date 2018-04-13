@@ -21,6 +21,7 @@ def subjects(request,year):
     subject=clasyear.objects.filter(year=year)
     return render(request,'subjects.html',{'subject':subject})
 def files(request,categorie):
+    print(categorie)
     file=filest.objects.filter(categorie=categorie)    
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -28,7 +29,7 @@ def files(request,categorie):
             form.save()
             return HttpResponseRedirect('/index/')
     else:
-        form = PostForm()
+        form = PostForm( initial = {'categorie'  :categorie})
     return render(request,'files.html',{'file':file,'form':form})
 
 
