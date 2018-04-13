@@ -5,11 +5,16 @@
 
 <div class="container">
     <br>
+    <h1>{{request.resolver_match.kwargs.categorie}}</h1>
+   
+
 
     {% for sub in file %}  
     <div class="panel panel-default">
           <div class="panel-body">
-      <h3>{{sub.fname }}</h3>
+            <a href="{{ sub.fname.url }}" download>
+                <p>{{ sub.fname }}  </p>
+                        </a>
       <h5>{{sub.fdescription }}</h5>
      
           </div></div>
@@ -20,7 +25,7 @@
     <br>
     
     <h1>New post</h1>
-    <form method="POST" class="post-form">
+    <form method="POST" class="post-form"enctype="multipart/form-data">
         {% csrf_token %}
         <table border="1">
     {{ form }}

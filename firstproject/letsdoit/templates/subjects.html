@@ -11,7 +11,7 @@
       {% for sub in subject %}  
       <div class="panel panel-default">
             <div class="panel-body">
-        <a href="{% url 'details' name=sub.name %}"><h3>{{sub.name }}</h3></a>
+        <a href="{% url 'files' categorie=sub.name %}"><h3>{{sub.name }}</h3></a>
         <p>{{sub.description}}</p>
           </div></div>
         {% endfor %}
