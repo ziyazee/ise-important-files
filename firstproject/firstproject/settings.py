@@ -7,7 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.11/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.11/ref/settings/
+https://docs.djangoproject.com/e'159.89.175.3'n/1.11/ref/settings/
 """
 
 import os
@@ -25,7 +25,7 @@ SECRET_KEY = '-m%c+%umh2xj2%a2#&sbuj7kvzy*-jl=@f00&y=!dsm$(+vpnj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.89.175.3']
 
 
 # Application definition
