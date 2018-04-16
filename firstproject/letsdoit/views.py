@@ -12,7 +12,10 @@ def home(request):
 
 
 def index(request):
-    return HttpResponse("great!!! files got added")
+    return render(request,'index.html')
+
+def testing(request):
+    return render(request,'testing.html')    
 
 
 def details(request,name):
