@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'letsdoit',
     'accounts',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
