@@ -8,7 +8,7 @@ from .forms import PostForm
 
 def home(request):
     yea=clasyear.objects.order_by('year').values('year').distinct()
-    if request.user.is_authenticated():    
+    if request.user.is_authenticated:    
         return render(request,'home.html',{'yea':yea,})
     else:
         return redirect("/")
@@ -23,7 +23,7 @@ def testing(request):
 def details(request,name):
     detail=clasyear.objects.filter(name=name)
     contentValue = {'detail':detail}
-    if current_user.is_authenticated:    
+    if request.user.is_authenticated:    
         return render(request,'details.html',contentValue)
     else:
         return redirect("/")
@@ -31,7 +31,7 @@ def details(request,name):
 
 def subjects(request,year):
     subject=clasyear.objects.filter(year=year)
-    if current_user.is_authenticated:    
+    if request.user.is_authenticated:    
         return render(request,'subjects.html',{'subject':subject})   
     else:
         return redirect("/")
@@ -46,7 +46,7 @@ def files(request,categorie):
             return HttpResponseRedirect(request.path_info)
     else:
         form = PostForm( initial = {'categorie'  :categorie})
-    if current_user.is_authenticated:    
+    if request.user.is_authenticated:    
         return render(request,'files.html',{'file':file,'form':form})   
     else:
         return redirect("/")
