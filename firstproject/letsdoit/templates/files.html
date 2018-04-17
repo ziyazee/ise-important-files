@@ -78,18 +78,9 @@ h2,h3{
     <div style="">
     <form method="POST" class="post-form"enctype="multipart/form-data">
         {% csrf_token %}
-        <table>
-                <tr> 
-      <td>  <span style="color:white">File name</span></td><td>
-{{ form.fname.errors }}
-    
-{{ form.fname }}</td></tr>
-
-<tr><td>
-<span style="color:white">File description</span></td><td>
-    {{ form.fdescription.errors }}
-{{ form.fdescription }}
-</td></tr></table>
+        <table border="1">
+            {{ form }}
+          </table>
         <br>
 
         <button type="submit" class="btn btn-success"><span style="font-size: 20px;">Save</span></button>

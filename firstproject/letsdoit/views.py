@@ -48,8 +48,10 @@ def files(request,categorie):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(request.path_info)
+        else:
+            return redirect("/")    
     else:
-        form = PostForm( initial = {'categorie'  :categorie,'usn':usn})
+        form = PostForm( initial = {'categorie':categorie,'usn':usn})
     if request.user.is_authenticated:    
         return render(request,'files.html',{'file':file,'form':form})   
     else:

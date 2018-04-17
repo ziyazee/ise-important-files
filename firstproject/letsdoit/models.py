@@ -6,7 +6,8 @@ class clasyear(models.Model):
     year=models.CharField(choices=choice,max_length=100)
     name=models.CharField(max_length=30,unique=True)
     description=models.CharField(max_length=50,blank=True)
-    
+    def __str__(self):
+        return self.name
 
  
 class filest(models.Model):
@@ -19,16 +20,16 @@ class filest(models.Model):
     categorie = models.ForeignKey(clasyear,to_field='name',
     on_delete=models.CASCADE,
     )     
-    
+   
+class a(models.Model):
+    aa=models.CharField(max_length=20,blank=True)
 
 class files(models.Model):
     filename=models.FileField()  
     def get_absolute_url(self):
         return reverse('files:detail',kwargs={'pk':self.pk})  
     fdescription=models.CharField(max_length=50,blank=True)
-    categorie = models.ForeignKey(clasyear,to_field='name',
-    on_delete=models.CASCADE,
-    )     
+    categorie = models.CharField(max_length=50,blank=True)
        
 # class classyear(models.Model):
 #     year=models.CharField(max_length=5)
