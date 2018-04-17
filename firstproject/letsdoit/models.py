@@ -14,6 +14,8 @@ class filest(models.Model):
     def get_absolute_url(self):
         return reverse('files:detail',kwargs={'pk':self.pk})
     fdescription=models.CharField(max_length=50,blank=True)
+    usn=models.CharField(max_length=50)
+
     categorie = models.ForeignKey(clasyear,to_field='name',
     on_delete=models.CASCADE,
     )     

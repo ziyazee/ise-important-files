@@ -6,7 +6,7 @@ from .models import filest
 
 @admin.register(filest)
 class  Ziya(admin.ModelAdmin):
-    list_display=['fname','fdescription','categorie']
+    list_display=['fname','fdescription','usn','categorie']
 
    
 #admin.site.register(admin,Myinfo)

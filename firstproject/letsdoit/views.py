@@ -22,6 +22,7 @@ def testing(request):
 
 def details(request,name):
     detail=clasyear.objects.filter(name=name)
+
     contentValue = {'detail':detail}
     if request.user.is_authenticated:    
         return render(request,'details.html',contentValue)
@@ -38,6 +39,9 @@ def subjects(request,year):
 
 def files(request,categorie):
     print(categorie)
+    usn = None
+    if request.user.is_authenticated():
+        usn = request.user.username
     file=filest.objects.filter(categorie=categorie)    
     if request.method == 'POST':
         form = PostForm(request.POST,request.FILES)
@@ -45,7 +49,7 @@ def files(request,categorie):
             form.save()
             return HttpResponseRedirect(request.path_info)
     else:
-        form = PostForm( initial = {'categorie'  :categorie})
+        form = PostForm( initial = {'categorie'  :categorie,'usn':usn})
     if request.user.is_authenticated:    
         return render(request,'files.html',{'file':file,'form':form})   
     else:
