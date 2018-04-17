@@ -1,41 +1,93 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<html>
+    
+<head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+    
+    h1{
+    color:white;
+    font-size: 5.25em;
+    font-weight: 700;
+    
+    
+}
+h2,h3{
+    color:white;
+    font-size: 2.25em;
+    font-weight: 300;
+    
+    
+}
+</style>
+</head>
+<body style="background:#00356B">
+    <div class="container-fluid">
+    
+    <div class="row">
 
-
-<div class="container">
-    <br>
-
-    <h2>{{ request.user.username }}</h2>
-    <h1>{{request.resolver_match.kwargs.categorie}}</h1>
-    <h2>{{ user.get_username }}</h2>
-
-<form action="accounts/logout/"method="post">
-    {% csrf_token %}
-    <button type="submit">logout</button>
-
-</form>
+    <div class="col-sm-8">
+    <center><h1>{{request.resolver_match.kwargs.categorie}}</h1></center>
+    <br> <div class="row">
     {% for sub in file %}  
-    <div class="panel panel-default">
-          <div class="panel-body">
-            <a href="{{ sub.fname.url }}" download>
-                <p>{{ sub.fname }}  </p>
-                        </a>
-      <h5>{{sub.fdescription }}</h5>
-     <h4>contributed by:{{ sub.usn }}</h4>
-          </div></div>
-      {% endfor %}
-    
-    
+   
+        <div class="col-sm-6">
+        <div class="panel-body" style="background: rgba(0, 0, 0, 0.4);">
+        <table>
+            <tr><div style="background-color: aqua">
+                <td><p><span style="color:white">File name:</span></p></td>
+                <td><p><span style="color:white">[{{ sub.fname }} ]</span> </p></td></div>
+        
+        </tr>
+       <tr><td><h5><span style="color:white"> File description:</span></h5>
+           </td><td><h5><span style="color:white">[{{sub.fdescription }}]</span></h5>
+      </td></tr></table>  <h4><span style="color:aqua">contributed by {{ sub.usn }}</span></h4>
+        <a href="{{ sub.fname.url }}"style="color:white;" download>Download here</a>
+        <hr>
+        </div></div>
+        
+        <!-- {% with sub.id as me/2 %} 
 
-    <br>
+        {% if me is 1 %}
+            <br><br>
+        {% endif %}
+               {% endwith %} -->
+            
+    {% endfor %}
     
-    <h1>New post</h1>
+</div>
+    </div>
+
+
+
+
+    <div class="col-sm-4">
+    <br><h3>hello, {{ user.get_username }}</h3>
+    
+          
+    <form action="accounts/logout/"method="post">
+       {% csrf_token %}
+      
+       <button type="submit"class="btn btn-info"><span style="font-size: 20px;">logout</span></button>
+    </form>     
+<br>
+    <h2>New post</h2>
+    <div style="">
     <form method="POST" class="post-form"enctype="multipart/form-data">
         {% csrf_token %}
         <table border="1">
-    {{ form }}
-  </table>
-        <button type="submit" class="save btn btn-default">Save</button>
+        {{ form }}
+        </table>
+        <br>
+
+        <button type="submit" class="btn btn-success"><span style="font-size: 20px;">Save</span></button>
     </form>
     </div>
+    
+    </div>
+    </div>
+
+    </div>
+    
+    </body>
+    </html>
