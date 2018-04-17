@@ -4,7 +4,7 @@ from django.db import models
 class clasyear(models.Model):
     choice=[('2nd-year','2'),('3rd-year','3'),('4th-year','4')]
     year=models.CharField(choices=choice,max_length=100)
-    name=models.CharField(max_length=20,unique=True)
+    name=models.CharField(max_length=30,unique=True)
     description=models.CharField(max_length=50,blank=True)
     
 

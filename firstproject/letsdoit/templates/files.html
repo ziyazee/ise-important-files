@@ -12,6 +12,9 @@
     
     
 }
+td{
+    padding-right: 4px;
+}
 h2,h3{
     color:white;
     font-size: 2.25em;
@@ -63,7 +66,7 @@ h2,h3{
 
     <div class="col-sm-4">
     <br><h3>hello, {{ user.get_username }}</h3>
-    
+   
           
     <form action="accounts/logout/"method="post">
        {% csrf_token %}
@@ -75,9 +78,18 @@ h2,h3{
     <div style="">
     <form method="POST" class="post-form"enctype="multipart/form-data">
         {% csrf_token %}
-        <table border="1">
-        {{ form }}
-        </table>
+        <table>
+                <tr> 
+      <td>  <span style="color:white">File name</span></td><td>
+{{ form.fname.errors }}
+    
+{{ form.fname }}</td></tr>
+
+<tr><td>
+<span style="color:white">File description</span></td><td>
+    {{ form.fdescription.errors }}
+{{ form.fdescription }}
+</td></tr></table>
         <br>
 
         <button type="submit" class="btn btn-success"><span style="font-size: 20px;">Save</span></button>

@@ -1,10 +1,12 @@
 from django import forms
 
 
-from .models import filest
+from .models import filest    
+
 
 class PostForm(forms.ModelForm):
-    class Meta:    
+    class Meta:   
+        fdescription = forms.CharField( widget=forms.Textarea() )
         model = filest
         fields = ('fname','fdescription','usn' ,'categorie')
         widgets = {'categorie': forms.HiddenInput(),'usn': forms.HiddenInput()}

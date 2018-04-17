@@ -1,15 +1,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<body style="background:#00356B"><div class="container" >
+<body style="background:#00356B"><div class="container-fluid" >
     <br>
+    <div class="row">
+            <div class="col-sm-9">
         <div class="jumbotron">
           <h1>Information Science and engineering</h1>      
           <p>Get your important notes,files here...</p>
         </div>
           
-      </div>
-<div class="container">
+      
+
 
     {% for y in yea %}
     <div>
@@ -24,4 +26,45 @@
     {% endfor %} 
 
 </div>
+<div class="col-sm-3" >
+    <br><center> <img src="../media/default-user.png">
+    <h1><span style="color:white">{{ user.get_username }}</span></h1>
+</center>
+<!-- <div style="width:100%;height:45%;background-color:aqua;overflow:auto">
+        <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p> <h1>Information Science and engineering</h1>      
+        <p>Get your important notes,files here...</p>
+</div>
+
+<h4><span style="color:white">feedback:</span></h4><input type="text"style="width:100%"><br>
+<center><input type="button" value="button"></center> -->
+</div></div>
+
 </body>
