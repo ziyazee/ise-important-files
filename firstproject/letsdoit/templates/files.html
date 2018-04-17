@@ -39,11 +39,11 @@ h2,h3{
         <table>
             <tr><div style="background-color: aqua">
                 <td><p><span style="color:white">File name:</span></p></td>
-                <td><p><span style="color:white">[{{ sub.fname }} ]</span> </p></td></div>
+                <td><b><span style="color:deeppink">{{ sub.fname }} </span> </b></td></div>
         
         </tr>
        <tr><td><h5><span style="color:white"> File description:</span></h5>
-           </td><td><h5><span style="color:white">[{{sub.fdescription }}]</span></h5>
+           </td><td><h5><span style="color:white">{{sub.fdescription }}</span></h5>
       </td></tr></table>  <h4><span style="color:aqua">contributed by {{ sub.usn }}</span></h4>
         <a href="{{ sub.fname.url }}"style="color:white;" download>Download here</a>
         <hr>
