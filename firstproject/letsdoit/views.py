@@ -40,7 +40,7 @@ def subjects(request,year):
 def files(request,categorie):
     print(categorie)
     usn = None
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         usn = request.user.username
     file=filest.objects.filter(categorie=categorie)    
     if request.method == 'POST':
