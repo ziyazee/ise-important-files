@@ -42,14 +42,13 @@ def files(request,categorie):
     usn = None
     if request.user.is_authenticated:
         usn = request.user.username
-    file=filest.objects.filter(categorie=categorie)    
+    file=filest.objects.filter(categorie=categorie).order_by('fname')
     if request.method == 'POST':
         form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(request.path_info)
-        else:
-            return redirect("/")    
+           
     else:
         form = PostForm( initial = {'categorie':categorie,'usn':usn})
     if request.user.is_authenticated:    

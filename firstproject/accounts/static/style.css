@@ -17,7 +17,7 @@ canvas {
       right: 50%;
       transform: translate(50%,-50%);
       color: #fff;
-      width:800px;
+      width:0;
       height: 300px;
       padding: 2em 3em;
       background: rgba(0, 0, 0, 0.4);

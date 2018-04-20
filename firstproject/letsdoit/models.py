@@ -11,7 +11,7 @@ class clasyear(models.Model):
 
  
 class filest(models.Model):
-    fname=models.FileField(blank=True)
+    fname=models.FileField()
     def get_absolute_url(self):
         return reverse('files:detail',kwargs={'pk':self.pk})
     fdescription=models.CharField(max_length=50,blank=True)
