@@ -28,5 +28,6 @@ python manage.py runserver
 ___
 
 ### Some snapshots of this project:
-
-![](markdown_images/1.jpeg) ![](markdown_images/2.jpeg)![](markdown_images/3.jpeg)
+<img src="markdown_images/1.jpeg" width="200" height="400">
+<img src="markdown_images/2.jpeg" width="200" height="400">
+<img src="markdown_images/3.jpeg" width="200" height="400">
